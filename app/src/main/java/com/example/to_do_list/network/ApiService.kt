@@ -4,20 +4,37 @@ import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.POST
 
-// Request Data Class
+// 🔹 Login Request Data Class
 data class LoginRequest(
     val email: String,
     val password: String
 )
 
-// Response Data Class
+// 🔹 Login Response Data Class
 data class LoginResponse(
     val message: String,
     val token: String? // Optional token
 )
 
-// Retrofit API Interface
+// 🔹 Register Request Data Class
+data class RegisterRequest(
+    val username: String,
+    val email: String,
+    val phone: Long, // Changed to Long
+    val password: String
+)
+
+// 🔹 Register Response Data Class
+data class RegisterResponse(
+    val message: String,
+    val success: Boolean
+)
+
+// 🔹 Retrofit API Interface
 interface ApiService {
-    @POST("login") // Replace with your actual API endpoint
+    @POST("login")
     fun login(@Body request: LoginRequest): Call<LoginResponse>
+
+    @POST("register") // New Register API added here!
+    fun register(@Body request: RegisterRequest): Call<RegisterResponse>
 }

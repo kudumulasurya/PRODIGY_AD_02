@@ -27,7 +27,7 @@
         </activity>
 
         <activity
-            android:name=".Sign_up"
+            android:name=".SignUp"
             android:exported="true" />
         <activity
             android:name=".Forgot_password"
