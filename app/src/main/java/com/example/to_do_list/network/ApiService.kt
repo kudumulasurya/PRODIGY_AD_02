@@ -3,6 +3,7 @@ package com.example.to_do_list.network
 import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.POST
+import retrofit2.http.PUT
 
 // 🔹 Login Request Data Class
 data class LoginRequest(
@@ -30,6 +31,18 @@ data class RegisterResponse(
     val success: Boolean
 )
 
+// Change password request object
+data class PasswordRequest (
+    val email: String,
+    val otp: String,
+    val password: String
+)
+
+data class PasswordResponse(
+    val message: String,
+    val success: Boolean
+)
+
 // 🔹 Retrofit API Interface
 interface ApiService {
     @POST("login")
@@ -37,4 +50,7 @@ interface ApiService {
 
     @POST("register") // New Register API added here!
     fun register(@Body request: RegisterRequest): Call<RegisterResponse>
+
+    @PUT("changePassword")
+    fun changePassword(@Body request: PasswordRequest): Call<PasswordResponse>
 }

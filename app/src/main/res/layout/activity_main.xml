@@ -16,7 +16,7 @@
         android:layout_marginLeft="32dp"
         android:layout_marginRight="32dp"
         android:background="@drawable/edittext_border_selector"
-        android:hint="Username, email or phone number"
+        android:hint="Email"
         android:padding="18dp"
         android:textColor="#FFFFFF"
         android:textColorHint="#B3B3B3"
